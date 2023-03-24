@@ -1,0 +1,15 @@
+    private static void najskupljiArtikl(Kategorija[] kategorije){
+        BigDecimal najvecaCijena = BigDecimal.ZERO;
+        String imeNajskupljeg = "";
+
+        for (Kategorija kategorija : kategorije) {
+            for (Artikl artikl : kategorija.getArtikli()) {
+                if (artikl.getCijena().compareTo(najvecaCijena) > 0) {
+                    najvecaCijena = artikl.getCijena();
+                    imeNajskupljeg = artikl.getNaslov();
+                }
+            }
+        }
+        System.out.println("Najskuplji artikl je: " + imeNajskupljeg);
+        System.out.println("Najveća cijena artikla je: " + najvecaCijena);
+    }
